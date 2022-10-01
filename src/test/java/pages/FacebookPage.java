@@ -6,18 +6,21 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class FacebookPage {
+
     public FacebookPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
+        PageFactory.initElements(Driver.getDriver(),this);
     }
 
     @FindBy(xpath = "//*[@name='email']")
-    public WebElement email;
+    public WebElement emailTextBox;
 
-    @FindBy(xpath = "//input[@type='password']")
-    public WebElement password;
+    @FindBy(xpath = "//*[@type='password']")
+    public WebElement passwordTextBox;
 
-    @FindBy(xpath = "//*[@name=\"login\"]")
-    public WebElement login;
-    @FindBy(xpath = "//img[@class='_9ay6 img']")
-    public WebElement girisYapilamadi;
+    @FindBy(xpath = "//*[@class='_9ay7']")
+    public WebElement girisYapilamadiMesaji;
+
+
+
+
 }

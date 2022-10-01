@@ -1,48 +1,30 @@
 package utilities;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
+    private static Properties properties;
+    static{      //buranın herşeyden önce çalışması için static bloğa aldık
+        String path="configuration.properties";   //configuration.properties dosyasının yolunu aldık
+        try{
+            FileInputStream fis = new FileInputStream(path);
+            properties=new Properties();
+            properties.load(fis);  //fis'in okudugu bilgileri properties'e yükledi
 
-    public static Properties properties;
-
-    static { // Her method'dan once calisir
-
-        String dosyaYolu = "configuration.properties";
-        try {
-            FileInputStream fis = new FileInputStream(dosyaYolu);
-            properties = new Properties();
-            properties.load(fis); //fis'in okudugu bilgileri properties'e yukledi.
-
-        } catch (IOException e) {
+            fis.close();
+        }  catch (IOException e) {
+            //    e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
-
-    public static String getProperty(String key) {
-
-        return properties.getProperty(key);
+    public static String getProperty(String key){
         /*
-        test method'undan yolladigimiz String key degerini alip Properties class'indan getProperty()
-        method'unu kullanarak bu key'e ait value'u bize yazdirir.
-         */
+Test methodundan yolladigimiz String key degerini alip properties classindan
+getProperty() methodunu kullanarak bu key'e ait value'yu bize getirir
+ */
+        return properties.getProperty(key);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

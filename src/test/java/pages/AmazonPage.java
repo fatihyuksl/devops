@@ -6,13 +6,12 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class AmazonPage {
-    public AmazonPage(){//Constructor olusturup public yapmamiz gerekir
+    public AmazonPage(){
         PageFactory.initElements(Driver.getDriver(),this);
-
     }
     @FindBy(id="twotabsearchtextbox")
     public WebElement aramaKutusu;
 
-    @FindBy(xpath="//div[@class='a-section a-spacing-small a-spacing-top-small']")
-    public WebElement aramaSonucu;
+    @FindBy(xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")
+    public WebElement aramaSonucuElementi;
 }
