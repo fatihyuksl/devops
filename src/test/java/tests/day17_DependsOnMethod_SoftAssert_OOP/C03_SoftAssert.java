@@ -9,7 +9,7 @@ import utilities.TestBase_BeforeClass_AfterClass;
 
 public class C03_SoftAssert extends TestBase_BeforeClass_AfterClass {
     @Test
-    public void test01() {
+    public void test01() throws InterruptedException {
         //Açıklama: Assert'te hata oldugunda programın alt satırlarının da calışmasını engeller.
         //      Fakat SoftAssert'te hata verileni atlar alt satrıları'da çalıştırır
 
@@ -35,6 +35,7 @@ public class C03_SoftAssert extends TestBase_BeforeClass_AfterClass {
 
         //6-arama sonucunun Nutella içerdigini test edin    //Bu satırda contains'i bilerek yanlış girdirdik
         softAssert.assertTrue(sonuc.getText().contains("Nutella123"),"Nutella içermiyor");
+        Thread.sleep(3000);
 
         softAssert.assertAll();   // en son bu kodun yazılması gerkelidir UNUTMA!!!!
                                   // Eğer girmezsek oluşan hatalrı bana vermez testi PASSED yapar.
