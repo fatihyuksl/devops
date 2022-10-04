@@ -1,11 +1,12 @@
 package utilities;
+
+import com.github.javafaker.Faker;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
+import org.testng.asserts.SoftAssert;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -17,7 +18,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.function.Function;
 public class ReusableMethods {
-    //========ScreenShot(Syafanın resmini alma)=====//
+    static Faker faker;
+    static Actions actions;
+    static SoftAssert softAssert;
+    static Select select;
+    static WebElement ddm;
+    //========ScreenShot(Sayfanın resmini alma)=====//
     public static String getScreenshot(String name) throws IOException {
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -129,6 +135,176 @@ public class ReusableMethods {
         } catch (Throwable error) {
             System.out.println(
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
+        }
+    }
+    //====== Faker ======//
+    public static Faker getFaker() { // getFaker method
+        return faker = new Faker();
+    }
+    //====== Actions ======//
+    public static Actions getActions() { //getActions method
+        return actions = new Actions(Driver.getDriver());
+    }
+    //====== Soft Assert ======//
+    public static SoftAssert getSoftAssert() { //getSoftAssert method
+        return softAssert = new SoftAssert();
+    }
+    //====== Select ======//
+    public static Select select(WebElement ddm){
+        return select = new Select(ddm);
+    }
+    //====== js ======//
+    public static void jsclick(WebElement webElement){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", webElement);
+        try {
+            webElement.click();
+        } catch (Exception e) {
+            JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+            executor.executeScript("arguments[0].click();", webElement);
+        }
+    }
+    public boolean waitForElementToBeClickableBool(WebDriver    driver, By attributeValue, int waitTime) {
+        boolean flag = false;
+        try{
+            new WebDriverWait(driver, waitTime).ignoring(StaleElementReferenceException.class)
+                    .until(ExpectedConditions.elementToBeClickable(attributeValue));
+            flag=true;
+            return flag;
+
+        }catch(Exception Ex){
+            return flag;
+        }
+    }
+    public boolean waitForAlertPresent(WebDriver driver, int waitTime) {
+        boolean flag = false;
+        new WebDriverWait(driver, waitTime).ignoring(StaleElementReferenceException.class)
+                .until(ExpectedConditions.alertIsPresent());
+        try{
+            driver.switchTo().alert();
+            return flag = true;
+        }catch(Exception Ex){
+            return flag;
+        }
+    }
+    /**
+     * This method is used to wait for element till visibility of element.
+     *
+     * @param driver
+     * @param attributeValue
+     *            - provide locator value of element till it is visible on
+     *            application and then click that element.
+     * @param waitTime
+     *            - provide maximum wait time in seconds for driver
+     */
+    public boolean waitForElementToBeVisible(WebDriver driver, By attributeValue, int waitTime) {
+        boolean flag = false;
+        try {
+            new WebDriverWait(driver, waitTime).ignoring(StaleElementReferenceException.class)
+                    .until(ExpectedConditions.visibilityOfElementLocated(attributeValue));
+            flag=true;
+            return flag;
+        } catch (Exception Ex) {
+            return flag;
+        }
+    }
+
+    /**
+     * @Method:getcurrenttime This method is used to return system time in
+     *                        seconds.
+     */
+    public static int getcurrenttime() {
+        long currentDateMS = new Date().getTime();
+        int seconds = (int) ((currentDateMS / 1000) % 3600);
+        return seconds;
+    }
+    /**
+     * @Method:closeAllOtherWindows - This method is used to close all open
+     *                              windows except parent window.
+     * @param driver
+     * @return
+     * @throws InterruptedException
+     */
+    public static boolean closeAllOtherWindows(WebDriver driver) throws InterruptedException {
+        String Parent_Window = driver.getWindowHandle();
+        java.util.Set<String> allWindowHandles = driver.getWindowHandles();
+        for (String currentWindowHandle : allWindowHandles) {
+            if (!currentWindowHandle.equals(Parent_Window)) {
+                driver.switchTo().window(currentWindowHandle);
+                driver.close();
+                Thread.sleep(2000);
+            }
+        }
+        driver.switchTo().window(Parent_Window);
+        if (driver.getWindowHandles().size() == 1)
+            return true;
+        else
+            return false;
+    }
+    /**
+     * This method is for simple dropdown selection by visibleText
+     *
+     * @param driver
+     * @param dropDownID-This
+     *            is the unique attribute to find an dropdownelement
+     * @param dropDownValue-This
+     *            is the text to search in dropdown
+     */
+    public static void dropDownSelectionByText(WebDriver driver, By dropDownID, String dropDownValue) {
+        try {
+            WebElement element = null;
+            new WebDriverWait(driver, 5).ignoring(StaleElementReferenceException.class)
+                    .until(ExpectedConditions.elementToBeClickable(dropDownID));
+            element = driver.findElement(dropDownID);
+            Select dropDown = new Select(element);
+            dropDown.selectByVisibleText(dropDownValue);
+        }
+        catch (StaleElementReferenceException ex) {
+            System.out.println("Exception while selecting a value from dropdown" + ex.getMessage());
+        }
+    }
+    /**
+     * This method is for simple dropdown selection by value
+     *
+     * @param driver
+     * @param dropDownID-This
+     *            is the unique attribute to find an dropdownelement
+     * @param dropDownValue-This
+     *            is the text to search in dropdown
+     */
+    public static void dropDownSelectionByValue(WebDriver driver, By dropDownID, String dropDownValue) {
+        try {
+            WebElement element = null;
+            new WebDriverWait(driver, 5).ignoring(StaleElementReferenceException.class)
+                    .until(ExpectedConditions.elementToBeClickable(dropDownID));
+            element = driver.findElement(dropDownID);
+            Select dropDown = new Select(element);
+            dropDown.selectByValue(dropDownValue);
+        }
+        catch (StaleElementReferenceException ex) {
+            System.out.println("Exception while selecting a value from dropdown" + ex.getMessage());
+        }
+    }
+    /**
+     * This method is for simple dropdown selection by index
+     *
+     * @param driver
+     * @param dropDownID-This
+     *            is the unique attribute to find an dropdownelement
+     * @param dropDownValue-This
+     *            is the text to search in dropdown
+     */
+    public static void dropDownSelectionByIndex(WebDriver driver, By dropDownID, int dropDownValue) {
+        try {
+            WebElement element = null;
+            new WebDriverWait(driver, 5).ignoring(StaleElementReferenceException.class)
+                    .until(ExpectedConditions.elementToBeClickable(dropDownID));
+            element = driver.findElement(dropDownID);
+            Select dropDown = new Select(element);
+            dropDown.selectByIndex(dropDownValue);
+        }
+        catch (StaleElementReferenceException ex) {
+            System.out.println("Exception while selecting a value from dropdown" + ex.getMessage());
         }
     }
 }
