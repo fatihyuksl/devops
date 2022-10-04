@@ -24,14 +24,14 @@ public class C03_SoftAssert extends TestBase_BeforeClass_AfterClass {
 
         //3-arama kutusnun erişilebilir oldugunu tets edin
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
-        softAssert.assertTrue(aramaKutusu.isEnabled(),"We erişilemez");
+        softAssert.assertTrue(aramaKutusu.isEnabled(),"Arama Kutusu erişilemez");
 
         //4-arama kutusuna Nuella yazıp aratın
         aramaKutusu.sendKeys("Nutella", Keys.ENTER);
 
         //5-arama yapıldıgını test edin
         WebElement sonuc = driver.findElement(By.xpath("//*[@class='a-section a-spacing-small a-spacing-top-small']"));
-        softAssert.assertTrue(sonuc.isDisplayed(),"Sonuc WE görüntülemenemai");
+        softAssert.assertTrue(sonuc.isDisplayed(),"Sonuc WE görüntülemedi");
 
         //6-arama sonucunun Nutella içerdigini test edin    //Bu satırda contains'i bilerek yanlış girdirdik
         softAssert.assertTrue(sonuc.getText().contains("Nutella123"),"Nutella içermiyor");

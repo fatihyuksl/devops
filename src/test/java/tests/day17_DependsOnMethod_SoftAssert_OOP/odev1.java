@@ -16,7 +16,12 @@ public class odev1 {
 //“Purchase Foreign Currency” tusuna basin
 //“Currency” drop down menusunden Eurozone’u secin
 //    soft assert kullanarak "Eurozone (Euro)" secildigini test edin
-//    soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin  "Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)","China  (yuan)","Denmark (krone)","Eurozone (euro)","Great Britain (pound)","Hong Kong  (dollar)","Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand  (dollar)","Sweden (krona)","Singapore (dollar)","Thailand (baht)"
+
+//    soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin
+//    "Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)",
+//    "China  (yuan)","Denmark (krone)","Eurozone (euro)","Great Britain (pound)",
+//    "Hong Kong  (dollar)","Japan (yen)","Mexico (peso)","Norway (krone)",
+//    "New Zealand  (dollar)","Sweden (krona)","Singapore (dollar)","Thailand (baht)"
 
     ZeroWebappsecurity zeroWebappsecurity = new ZeroWebappsecurity();
     @Test

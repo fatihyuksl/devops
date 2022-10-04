@@ -1,0 +1,24 @@
+<!--
+    xml.dosyasinda belirli metodlari gruplayip istersek
+oncelikle gruplandirmak istedigimiz metodlari belirtmemiz gerekir.
+@Test notasyondan sonra parantez acip grup ismi belirtmemiz gerekiyor.
+.xml dosyasinda test tag'indan sonra groups tag'i altinda run tag'i icine 
+gruplandirdigimiz methodlarin grup ismi belirtmemiz gerekiyor.
+Ve son olarak grupladigimiz metodlarin hangi package altinda oldugunu belirtmemiz gerekir.  
+-->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Istenen Gruplari Calistirma ">
+    <test name="Belirli Gruplar">
+        <groups>
+            <run>
+                <include name="gp1"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests.day16_Priority_DepensOnMethod_BeforeAfter"/>
+            <package name="tests.day17_DependsOnMethod_SoftAssert_OOP"/>
+        </packages>
+    </test>
+    
+    
+</suite>

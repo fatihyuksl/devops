@@ -15,14 +15,14 @@ public class TestBase_BeforeClass_AfterClass {
 
     protected static WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass(groups = "gp1")
     public static void setup(){
         WebDriverManager.chromedriver().setup();
         driver =new ChromeDriver();
         driver.manage().window().maximize();
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    @AfterClass
+    @AfterClass(groups = "gp1")
     public static void tearDown(){
         driver.close();
     }

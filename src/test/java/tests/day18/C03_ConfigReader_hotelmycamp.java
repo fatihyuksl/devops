@@ -9,7 +9,7 @@ import utilities.Driver;
 
 public class C03_ConfigReader_hotelmycamp {
 
-    @Test
+    @Test(groups = "gp2")
     public void test1() {
 //        Bir Class olustur : PositiveTest
 //        2) Bir test method olustur positiveLoginTest()
