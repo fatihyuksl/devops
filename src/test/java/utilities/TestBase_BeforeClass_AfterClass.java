@@ -5,25 +5,23 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
 public class TestBase_BeforeClass_AfterClass {
 
-    protected static WebDriver driver;
+    protected  WebDriver driver;
 
     @BeforeClass(groups = "gp1")
-    public static void setup(){
+    public  void setup(){
         WebDriverManager.chromedriver().setup();
         driver =new ChromeDriver();
         driver.manage().window().maximize();
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @AfterClass(groups = "gp1")
-    public static void tearDown(){
+    public  void tearDown(){
         driver.close();
     }
 
