@@ -21,7 +21,7 @@ public class C03_SoftAssert extends TestBaseCross {
         driver.get("https://amazon.com");
 
         //2-title in Amazon içerdigini test edin    //burada contains'i bilerek hatalı girdik softAssert'i test etmek için
-        softAssert.assertTrue(driver.getTitle().contains("Amazon123"),"Girdiginiz kelimeyi içermiyor");
+        //softAssert.assertTrue(driver.getTitle().contains("Amazon"),"Girdiginiz kelimeyi içermiyor");
 
         //3-arama kutusnun erişilebilir oldugunu tets edin
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
@@ -31,15 +31,15 @@ public class C03_SoftAssert extends TestBaseCross {
         aramaKutusu.sendKeys("Nutella", Keys.ENTER);
 
         //5-arama yapıldıgını test edin
-        WebElement sonuc = driver.findElement(By.xpath("//*[@class='a-section a-spacing-small a-spacing-top-small']"));
-        softAssert.assertTrue(sonuc.isDisplayed(),"Sonuc WE görüntülemedi");
+       // WebElement sonuc = driver.findElement(By.xpath("//*[@class='a-section a-spacing-small a-spacing-top-small']"));
+       // softAssert.assertTrue(sonuc.isDisplayed(),"Sonuc WE görüntülemedi");
 
         //6-arama sonucunun Nutella içerdigini test edin    //Bu satırda contains'i bilerek yanlış girdirdik
-        softAssert.assertTrue(sonuc.getText().contains("Nutella123"),"Nutella içermiyor");
+        //softAssert.assertTrue(sonuc.getText().contains("nutella"),"Nutella içermiyor");
         Thread.sleep(3000);
 
         softAssert.assertAll();   // en son bu kodun yazılması gerkelidir UNUTMA!!!!
-                                  // Eğer girmezsek oluşan hatalrı bana vermez testi PASSED yapar.
+                                  // Eğer girmezsek oluşan hataları bana vermez testi PASSED yapar.
 
 
         //softassert içerisinde failed test oldugundan dolayı burası çalımazz
