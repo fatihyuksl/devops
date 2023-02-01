@@ -10,7 +10,7 @@ import utilities.Driver;
 public class C03_PozitifTest {
     @Test
     public void pozitifTest() {
-//        Bir Class olustur : PositiveTest
+//   12     Bir Class olustur : PositiveTest
 //        2) Bir test method olustur positiveLoginTest()
 //        https://www.hotelmycamp.com/ adresine git  login butonuna bas
         Driver.getDriver().get(ConfigReader.getProperty("hmcUrl"));
