@@ -3,16 +3,11 @@
 <suite name="Failed suite [Command line suite]" verbose="0">
   <test thread-count="5" name="Command line test(failed)" verbose="0">
     <classes>
-      <class name="tests.day17_DependsOnMethod_SoftAssert_OOP.C04_DriverIlkTest">
+      <class name="tests.day20_SmokeTest.C03_E2ETest">
         <methods>
-          <include name="test01"/>
+          <include name="E2ETest"/>
         </methods>
-      </class> <!-- tests.day17_DependsOnMethod_SoftAssert_OOP.C04_DriverIlkTest -->
-      <class name="tests.day19_SignletonPattern_NegatifPozitifTest.C02_NegatifTest">
-        <methods>
-          <include name="negatifTest"/>
-        </methods>
-      </class> <!-- tests.day19_SignletonPattern_NegatifPozitifTest.C02_NegatifTest -->
+      </class> <!-- tests.day20_SmokeTest.C03_E2ETest -->
       <class name="tests.day20_SmokeTest.C02_SmokeNegatifTest">
         <methods>
           <include name="yanlisSifre"/>
@@ -20,28 +15,11 @@
           <include name="yanlisKullanici"/>
         </methods>
       </class> <!-- tests.day20_SmokeTest.C02_SmokeNegatifTest -->
-      <class name="tests.day19_SignletonPattern_NegatifPozitifTest.C03_PozitifTest">
+      <class name="tests.day19_SignletonPattern_NegatifPozitifTest.C02_NegatifTest">
         <methods>
-          <include name="pozitifTest"/>
+          <include name="negatifTest"/>
         </methods>
-      </class> <!-- tests.day19_SignletonPattern_NegatifPozitifTest.C03_PozitifTest -->
-      <class name="tests.day18.C01_PageClassFaceBookTest">
-        <methods>
-          <include name="test3"/>
-          <include name="test2"/>
-          <include name="test1"/>
-        </methods>
-      </class> <!-- tests.day18.C01_PageClassFaceBookTest -->
-      <class name="tests.day20_SmokeTest.C01_SmokePozitifTest">
-        <methods>
-          <include name="pozitifTest"/>
-        </methods>
-      </class> <!-- tests.day20_SmokeTest.C01_SmokePozitifTest -->
-      <class name="tests.day20_SmokeTest.C03_E2ETest">
-        <methods>
-          <include name="E2ETest"/>
-        </methods>
-      </class> <!-- tests.day20_SmokeTest.C03_E2ETest -->
+      </class> <!-- tests.day19_SignletonPattern_NegatifPozitifTest.C02_NegatifTest -->
       <class name="tests.day22.C01_RaporluTest">
         <methods>
           <include name="tearDownMethod"/>
@@ -50,6 +28,23 @@
           <include name="setUpTest"/>
         </methods>
       </class> <!-- tests.day22.C01_RaporluTest -->
+      <class name="tests.day19_SignletonPattern_NegatifPozitifTest.C03_PozitifTest">
+        <methods>
+          <include name="pozitifTest"/>
+        </methods>
+      </class> <!-- tests.day19_SignletonPattern_NegatifPozitifTest.C03_PozitifTest -->
+      <class name="tests.day20_SmokeTest.C01_SmokePozitifTest">
+        <methods>
+          <include name="pozitifTest"/>
+        </methods>
+      </class> <!-- tests.day20_SmokeTest.C01_SmokePozitifTest -->
+      <class name="tests.day18.C01_PageClassFaceBookTest">
+        <methods>
+          <include name="test3"/>
+          <include name="test2"/>
+          <include name="test1"/>
+        </methods>
+      </class> <!-- tests.day18.C01_PageClassFaceBookTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

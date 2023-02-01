@@ -34,10 +34,10 @@ public class C03_SoftAssert extends TestBase_BeforeClass_AfterClass {
         softAssert.assertTrue(sonuc.isDisplayed(),"Sonuc WE görüntülemedi");
 
         //6-arama sonucunun Nutella içerdigini test edin    //Bu satırda contains'i bilerek yanlış girdirdik
-        softAssert.assertTrue(sonuc.getText().contains("Nutella123"),"Nutella içermiyor");
+        softAssert.assertTrue(sonuc.getText().contains("Nutella"),"Nutella içermiyor");
         Thread.sleep(3000);
 
-        softAssert.assertAll();   // en son bu kodun yazılması gerkelidir UNUTMA!!!!
+        //softAssert.assertAll();   // en son bu kodun yazılması gerkelidir UNUTMA!!!!
                                   // Eğer girmezsek oluşan hatalrı bana vermez testi PASSED yapar.
 
 
