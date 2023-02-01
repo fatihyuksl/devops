@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="com.Batch81TestNG" />
+        <module name="TestNG" />
       </profile>
     </annotationProcessing>
   </component>
