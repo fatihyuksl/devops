@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="TestSuite" time="21.772" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="TestSuite" time="31.335" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -63,5 +63,9 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="tests.day17_DependsOnMethod_SoftAssert_OOP.C04_DriverIlkTest" name="test01" time="21.772"/>
+  <testcase classname="tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority" name="hepsiburadaTest" time="12.444"/>
+  <testcase classname="tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority" name="bestbuyTest" time="1.629"/>
+  <testcase classname="tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority" name="youtubeTest" time="4.636"/>
+  <testcase classname="tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority" name="amazonTest" time="2.836"/>
+  <testcase classname="tests.day17_DependsOnMethod_SoftAssert_OOP.C03_SoftAssert" name="test01" time="9.79"/>
 </testsuite>
