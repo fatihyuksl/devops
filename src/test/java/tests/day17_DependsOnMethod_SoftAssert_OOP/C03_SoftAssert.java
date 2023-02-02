@@ -27,7 +27,7 @@ public class C03_SoftAssert extends TestBase_BeforeClass_AfterClass {
         softAssert.assertTrue(aramaKutusu.isEnabled(),"Arama Kutusu erişilemez");
 
         //4-arama kutusuna Nuella yazıp aratın
-        // aramaKutusu.sendKeys("Nutella", Keys.ENTER);
+        aramaKutusu.sendKeys("Nutella", Keys.ENTER);
 
         //5-arama yapıldıgını test edin
         WebElement sonuc = driver.findElement(By.xpath("//*[@class='a-section a-spacing-small a-spacing-top-small']"));
