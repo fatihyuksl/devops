@@ -1,17 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-01T23:20:59 TRT" name="Command line suite" finished-at="2023-02-01T23:21:20 TRT" duration-ms="21760">
+  <suite started-at="2023-02-02T08:16:39 TRT" name="istenen class&#039;lari calistirma" finished-at="2023-02-02T08:17:36 TRT" duration-ms="56321">
     <groups>
+      <group name="gp1">
+        <method signature="C03_Priority.hepsiburadaTest()[pri:-1, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" name="hepsiburadaTest" class="tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority"/>
+      </group> <!-- gp1 -->
     </groups>
-    <test started-at="2023-02-01T23:20:59 TRT" name="Command line test" finished-at="2023-02-01T23:21:20 TRT" duration-ms="21760">
-      <class name="tests.day17_DependsOnMethod_SoftAssert_OOP.C04_DriverIlkTest">
-        <test-method signature="test01()[pri:0, instance:tests.day17_DependsOnMethod_SoftAssert_OOP.C04_DriverIlkTest@2aece37d]" started-at="2023-02-01T23:20:59 TRT" name="test01" finished-at="2023-02-01T23:21:20 TRT" duration-ms="21714" status="PASS">
+    <test started-at="2023-02-02T08:16:39 TRT" name="classlar" finished-at="2023-02-02T08:17:36 TRT" duration-ms="56321">
+      <class name="tests.day17_DependsOnMethod_SoftAssert_OOP.C03_SoftAssert">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.day17_DependsOnMethod_SoftAssert_OOP.C03_SoftAssert@31c88ec8]" started-at="2023-02-02T08:17:23 TRT" name="setup" finished-at="2023-02-02T08:17:25 TRT" duration-ms="1483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test01()[pri:0, instance:tests.day17_DependsOnMethod_SoftAssert_OOP.C03_SoftAssert@31c88ec8]" started-at="2023-02-02T08:17:25 TRT" name="test01" finished-at="2023-02-02T08:17:35 TRT" duration-ms="10333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test01 -->
-      </class> <!-- tests.day17_DependsOnMethod_SoftAssert_OOP.C04_DriverIlkTest -->
-    </test> <!-- Command line test -->
-  </suite> <!-- Command line suite -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.day17_DependsOnMethod_SoftAssert_OOP.C03_SoftAssert@31c88ec8]" started-at="2023-02-02T08:17:35 TRT" name="tearDown" finished-at="2023-02-02T08:17:36 TRT" duration-ms="250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.day17_DependsOnMethod_SoftAssert_OOP.C03_SoftAssert -->
+      <class name="tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:16:39 TRT" name="setUp" finished-at="2023-02-02T08:16:43 TRT" duration-ms="3775" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="hepsiburadaTest()[pri:-1, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:16:43 TRT" name="hepsiburadaTest" finished-at="2023-02-02T08:16:52 TRT" duration-ms="9321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hepsiburadaTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:16:52 TRT" name="tearDown" finished-at="2023-02-02T08:16:53 TRT" duration-ms="173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:16:53 TRT" name="setUp" finished-at="2023-02-02T08:16:54 TRT" duration-ms="1532" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="bestbuyTest()[pri:0, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:16:54 TRT" name="bestbuyTest" finished-at="2023-02-02T08:16:55 TRT" duration-ms="1271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bestbuyTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:16:55 TRT" name="tearDown" finished-at="2023-02-02T08:17:12 TRT" duration-ms="16206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:17:12 TRT" name="setUp" finished-at="2023-02-02T08:17:13 TRT" duration-ms="1181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="youtubeTest()[pri:1, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:17:13 TRT" name="youtubeTest" finished-at="2023-02-02T08:17:18 TRT" duration-ms="4951" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- youtubeTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:17:18 TRT" name="tearDown" finished-at="2023-02-02T08:17:18 TRT" duration-ms="359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:17:18 TRT" name="setUp" finished-at="2023-02-02T08:17:20 TRT" duration-ms="1573" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="amazonTest()[pri:2, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:17:20 TRT" name="amazonTest" finished-at="2023-02-02T08:17:23 TRT" duration-ms="3720" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- amazonTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority@6e4784bc]" started-at="2023-02-02T08:17:23 TRT" name="tearDown" finished-at="2023-02-02T08:17:23 TRT" duration-ms="157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.day16_Priority_DepensOnMethod_BeforeAfter.C03_Priority -->
+    </test> <!-- classlar -->
+  </suite> <!-- istenen class'lari calistirma -->
 </testng-results>
